@@ -554,6 +554,11 @@ module.exports = function (webpackEnv) {
       ],
     },
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env': {
+          'API_URL': JSON.stringify(process.env.API_URL),
+        }
+      }),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
