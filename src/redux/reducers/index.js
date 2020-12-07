@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import planets from './planets';
+import planet from './planet';
 
 export default combineReducers({
-  planets,
+  planet,
 });

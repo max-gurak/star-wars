@@ -4,13 +4,14 @@ import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import 'semantic-ui-css/semantic.min.css';
 
 import Routes from './Routes';
-import reducer from './redux/reducers';
+import appReducers from './redux/reducers';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = createStore(appReducers, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
   <Provider store={store}>
