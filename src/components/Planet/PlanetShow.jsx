@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getPlanet, clearPlanetData } from '../../redux/actions/planets';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 import {
   Button,
   Container,
@@ -11,11 +10,14 @@ import {
   List,
   Loader,
   Segment,
-  Table,
+  Table
 } from 'semantic-ui-react';
-import './styles/PlanetShow.scss';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import { History } from 'base';
+import { clearPlanetData, getPlanet } from 'app-actions/planets';
+
+import './styles/PlanetShow.scss';
 
 @withRouter
 @connect(
@@ -28,7 +30,6 @@ import { History } from 'base';
       data,
       residentLoading,
       residentsData
-      // error
     };
   },
   {
@@ -38,7 +39,6 @@ import { History } from 'base';
 )
 
 export default class PlanetShow extends React.PureComponent {
-
   static propTypes = {
     data: PropTypes.object,
     match: PropTypes.object,
@@ -47,7 +47,7 @@ export default class PlanetShow extends React.PureComponent {
     loading: PropTypes.bool,
     residentLoading: PropTypes.bool,
     residentsData: PropTypes.array,
-    showFields: PropTypes.array,
+    showFields: PropTypes.array
   };
 
   static defaultProps = {
@@ -56,8 +56,8 @@ export default class PlanetShow extends React.PureComponent {
       { key: 'climate', title: 'Climate' },
       { key: 'gravity', title: 'Gravity' },
       { key: 'terrain', title: 'Terrain' },
-      { key: 'population', title: 'Population' },
-    ],
+      { key: 'population', title: 'Population' }
+    ]
   };
 
   componentDidMount() {
@@ -92,8 +92,15 @@ export default class PlanetShow extends React.PureComponent {
             <List>
               {residentsData.map((resident, key) => {
                 return (
-                  <List.Item key={key} as={Link} to={`/people/${this.getResidentId(resident.url)}`} >
-                    <List.Icon name={resident.gender === 'female' ? 'female' : 'male'} color="orange" />
+                  <List.Item
+                    key={key}
+                    as={Link}
+                    to={`/people/${this.getResidentId(resident.url)}`}
+                  >
+                    <List.Icon
+                      name={resident.gender === 'female' ? 'female' : 'male'}
+                      color="orange"
+                    />
                     <List.Content>{resident.name}</List.Content>
                   </List.Item>
                 );
@@ -104,7 +111,7 @@ export default class PlanetShow extends React.PureComponent {
       </Table.Row>
     );
   };
-  
+
   render() {
     const { data, loading, showFields } = this.props;
 
@@ -126,15 +133,12 @@ export default class PlanetShow extends React.PureComponent {
                       <Table.Cell>{item.title}</Table.Cell>
                       <Table.Cell>{data[item.key]}</Table.Cell>
                     </Table.Row>
-                  )
+                  );
                 })}
                 {this.getResidents()}
               </Table.Body>
             </Table>
-            <Button
-              color="blue"
-              onClick={() => History.push('/planets')}
-            >
+            <Button color="blue" onClick={() => History.push('/planets')}>
               Planets list
             </Button>
           </Segment>
@@ -142,5 +146,4 @@ export default class PlanetShow extends React.PureComponent {
       </Container>
     );
   }
-
 }

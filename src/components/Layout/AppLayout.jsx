@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './styles/AppLayout.scss';
 
 export default class AppLayout extends React.PureComponent {
-
   static propTypes = {
-    children: PropTypes.object,
+    children: PropTypes.object
   };
 
   render() {
@@ -13,16 +13,13 @@ export default class AppLayout extends React.PureComponent {
 
     return (
       <div className="app-container">
-        <div className="gradient" >
+        <div className="gradient">
           <div className="stars-large" />
           <div className="stars-medium" />
           <div className="stars" />
         </div>
-        <div className="page-content">
-          {children}
-        </div>
+        <div className="page-content">{children}</div>
       </div>
     );
   }
-
 }

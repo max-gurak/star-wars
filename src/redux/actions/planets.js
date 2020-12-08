@@ -1,4 +1,4 @@
-import Api from 'api/Api';
+import { Api } from 'base';
 import { actionTypes } from './types';
 import { find } from 'lodash';
 import { getResidents } from './residents';

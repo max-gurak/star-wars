@@ -1,24 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { getPlanet, clearPlanetData } from '../../redux/actions/planets';
-import { getResident } from '../../redux/actions/residents';
-import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import {
   Button,
   Container,
   Dimmer,
   Header,
-  // List,
-  // List,
   Loader,
   Segment,
-  Table,
-  // Table
+  Table
 } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+
 import { History } from 'base';
+import { getResident } from 'app-actions/residents';
+
 import '../Planet/styles/PlanetShow.scss';
-// import { Link } from 'react-router-dom';
 
 @withRouter
 @connect(
@@ -38,7 +35,6 @@ import '../Planet/styles/PlanetShow.scss';
 )
 
 export default class PeopleShow extends React.PureComponent {
-
   static propTypes = {
     data: PropTypes.object,
     match: PropTypes.object,
@@ -47,7 +43,7 @@ export default class PeopleShow extends React.PureComponent {
     residentLoading: PropTypes.bool,
     clearPlanetData: PropTypes.func,
     residentsData: PropTypes.array,
-    showFields: PropTypes.array,
+    showFields: PropTypes.array
   };
 
   static defaultProps = {
@@ -57,8 +53,8 @@ export default class PeopleShow extends React.PureComponent {
       { key: 'gender', title: 'Gender' },
       { key: 'skin_color', title: 'Skin color' },
       { key: 'hair_color', title: 'Hair color' },
-      { key: 'birth_year', title: 'Birthday' },
-    ],
+      { key: 'birth_year', title: 'Birthday' }
+    ]
   };
 
   componentDidMount() {
@@ -98,21 +94,19 @@ export default class PeopleShow extends React.PureComponent {
                       <Table.Cell>{item.title}</Table.Cell>
                       <Table.Cell>{data[item.key]}</Table.Cell>
                     </Table.Row>
-                  )
+                  );
                 })}
               </Table.Body>
             </Table>
             <Button.Group className="go-back-buttons">
-              <Button
-                color="blue"
-                onClick={() => History.push('/planets')}
-              >
+              <Button color="blue" onClick={() => History.push('/planets')}>
                 Planets list
               </Button>
               <Button.Or />
               <Button
                 color="blue"
-                onClick={() => History.push(`/planets/${this.getPlanetId(data.homeworld)}`)}
+                onClick={() => History.push(`/planets/${this.getPlanetId(data.homeworld)}`)
+                }
               >
                 Homeword
               </Button>
@@ -122,5 +116,4 @@ export default class PeopleShow extends React.PureComponent {
       </Container>
     );
   }
-
 }

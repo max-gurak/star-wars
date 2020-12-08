@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Container, Header } from 'semantic-ui-react';
-
 import PropTypes from 'prop-types';
 
-import { getPlanets, loadMorePlanets } from '../../redux/actions/planets';
+import { getPlanets, loadMorePlanets } from 'app-actions/planets';
 import PlanetsCard from './components/PlanetsCard';
+
 import './styles/PlanetList.scss';
 
 @connect(
