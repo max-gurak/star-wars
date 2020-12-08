@@ -13,7 +13,7 @@ import {
 import PropTypes from 'prop-types';
 
 import { History } from 'base';
-import { getResident } from 'app-actions/residents';
+import { getResident, clearResidentData } from 'app-actions/residents';
 
 import '../Planet/styles/PlanetShow.scss';
 
@@ -30,19 +30,18 @@ import '../Planet/styles/PlanetShow.scss';
   },
   {
     getResident,
-    // clearPlanetData,
+    clearResidentData,
   }
 )
 
 export default class PeopleShow extends React.PureComponent {
+
   static propTypes = {
+    clearResidentData: PropTypes.func,
     data: PropTypes.object,
-    match: PropTypes.object,
     getResident: PropTypes.func,
     loading: PropTypes.bool,
-    residentLoading: PropTypes.bool,
-    clearPlanetData: PropTypes.func,
-    residentsData: PropTypes.array,
+    match: PropTypes.object,
     showFields: PropTypes.array
   };
 
@@ -64,7 +63,7 @@ export default class PeopleShow extends React.PureComponent {
   }
 
   componentWillUnmount() {
-    // this.props.clearPlanetData();
+    this.props.clearResidentData();
   }
 
   getPlanetId = url => {

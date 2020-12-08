@@ -39,6 +39,7 @@ import './styles/PlanetShow.scss';
 )
 
 export default class PlanetShow extends React.PureComponent {
+
   static propTypes = {
     data: PropTypes.object,
     match: PropTypes.object,

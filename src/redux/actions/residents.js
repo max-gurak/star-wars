@@ -17,6 +17,10 @@ const getResidentError = error => ({
   payload: error
 });
 
+export const clearResidentData = () => ({
+  type: actionTypes.CLEAR_RESIDENT_DATA
+});
+
 const getResidentsStarted = () => ({
   type: actionTypes.GET_RESIDENTS_START
 });
@@ -29,6 +33,10 @@ const getResidentsSuccess = residents => ({
 const getResidentsError = error => ({
   type: actionTypes.GET_RESIDENTS_ERROR,
   payload: error
+});
+
+export const clearResidentsData = () => ({
+  type: actionTypes.CLEAR_RESIDENTS_DATA
 });
 
 const getResidentId = url => {

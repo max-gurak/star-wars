@@ -7,9 +7,11 @@ import {
   Segment
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import PlanetCard from './PlanetCard';
 import { connect } from 'react-redux';
-import { loadMorePlanets } from '../../../redux/actions/planets';
+
+import { loadMorePlanets } from 'app-redux/actions/planets';
+import PlanetCard from './PlanetCard';
+
 
 @connect(
   ({ planet }) => {
