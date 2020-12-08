@@ -1,4 +1,72 @@
-.ui.segment.dimmable {
-  height: calc(100vh - 120px);
+.ui.segment {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 0;
+  border-radius: 0;
+  //margin: 0 auto;
+  margin: 0;
+  padding: 3.5rem;
+  padding-bottom: calc(3.5rem - 25px);
+}
+
+.ui.cards {
+  .ui.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //min-width: 400px;
+    //max-width: 500px;
+    width: calc(50% - 20px);
+
+    padding: 8px 13px;
+    font-size: 16px;
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0 0 25px 0;
+    //border: 1px solid #cccccc;
+    border-radius: 0;
+    color: #888888;
+
+    &:nth-child(odd) {
+      margin-right: 40px;
+    }
+
+    .content {
+      text-align: center;
+    }
+  }
+}
+
+.ui.active.transition.visible.dimmer {
+  background: rgba(62,95,149,.35);
+}
+
+
+.ui.inverted.header {
+  padding: 20px 0 35px 0;
+  text-align: center;
+}
+
+.ui.segment {
+  height: calc(100vh - 160px);
   overflow-y: scroll;
+
+  .ui.button {
+    background-color: #fafafa;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#0c93dd), to(#24a4ea));
+    background-image: linear-gradient(to top, #0c93dd 0%, #24a4ea 100%);
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 15px;
+
+    &:hover {
+      background-image: -webkit-gradient(linear, left bottom, left top, from(#0390dc), to(#0e91e2));
+      background-image: linear-gradient(to top, #0390dc 0%, #0e91e2 100%);
+    }
+  }
+}
+
+.ui.cards a.card:hover {
+  transform: none;
 }

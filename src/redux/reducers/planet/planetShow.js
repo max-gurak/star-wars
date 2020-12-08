@@ -19,6 +19,8 @@ export default function planetShow(state = initialState, action) {
         data: action.payload,
         loading: false,
       };
+    case actionTypes.CLEAR_PLANET_DATA:
+      return initialState;
     default:
       return state;
   }

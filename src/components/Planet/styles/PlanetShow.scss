@@ -1,0 +1,48 @@
+.planet-show.ui.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .ui.header {
+    margin-top: -50px;
+    font-size: 35px;
+  }
+
+  .ui.segment {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    overflow: auto;
+    padding: 45px 70px;
+
+    .ui.table {
+      font-size: 1.5rem;
+
+      td {
+        color: white;
+      }
+
+      .residents-container {
+        text-align: center;
+
+        .header {
+          margin: 15px 0 20px;
+          font-size: 26px;
+        }
+
+        .ui.list {
+          .item {
+            color: white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

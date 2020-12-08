@@ -1,9 +1,9 @@
-import PlanetIndex from './PlanetIndex';
+import PlanetList from './PlanetList';
 import PlanetShow from './PlanetShow';
 
 export default class Planet {
 
-    static Index = PlanetIndex;
+    static Index = PlanetList;
 
     static Show = PlanetShow;
 

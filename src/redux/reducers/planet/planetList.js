@@ -26,6 +26,7 @@ export default function planetList(state = initialState, action) {
     case actionTypes.GET_NEXT_PLANETS_START:
       return {
         ...state,
+        loading: true,
         loadingMore: true,
       };
     case actionTypes.GET_NEXT_PLANETS_SUCCESS:
@@ -37,6 +38,7 @@ export default function planetList(state = initialState, action) {
           previous: action.payload.previous,
           results: state.data.results.concat(action.payload.results),
         },
+        loading: false,
         loadingMore: false,
       };
     default:

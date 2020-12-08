@@ -9,7 +9,7 @@ import 'semantic-ui-css/semantic.min.css';
 import Routes from './Routes';
 import appReducers from './redux/reducers';
 import reportWebVitals from './reportWebVitals';
-import './index.css';
+// import './index.css';
 
 const store = createStore(appReducers, composeWithDevTools(applyMiddleware(thunk)));
 
