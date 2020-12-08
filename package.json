@@ -1,5 +1,9 @@
 {
   "name": "star-wars",
+  "author": {
+    "name": "Max Gurak",
+    "email": "max.gurak@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
