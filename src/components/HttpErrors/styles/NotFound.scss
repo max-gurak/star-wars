@@ -1,0 +1,16 @@
+.not-found.ui.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .ui.header {
+    margin-top: -50px;
+    font-size: 10rem;
+
+    .sub.header {
+      font-size: 2rem;
+    }
+  }
+}

@@ -4,18 +4,18 @@ import { getPlanet, clearPlanetData } from '../../redux/actions/planets';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 import {
+  Button,
   Container,
   Dimmer,
   Header,
   List,
-  // List,
   Loader,
   Segment,
   Table,
-  // Table
 } from 'semantic-ui-react';
 import './styles/PlanetShow.scss';
 import { Link } from 'react-router-dom';
+import { History } from 'base';
 
 @withRouter
 @connect(
@@ -131,6 +131,12 @@ export default class PlanetShow extends React.PureComponent {
                 {this.getResidents()}
               </Table.Body>
             </Table>
+            <Button
+              color="blue"
+              onClick={() => History.push('/planets')}
+            >
+              Planets list
+            </Button>
           </Segment>
         </Dimmer.Dimmable>
       </Container>

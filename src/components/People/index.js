@@ -1,10 +1,7 @@
-import ResidentList from './ResidentList';
-import ResidentShow from './ResidentShow';
+import PeopleShow from './PeopleShow';
 
 export default class Planet {
 
-    static Index = ResidentList;
-
-    static Show = ResidentShow;
+    static Show = PeopleShow;
 
 }

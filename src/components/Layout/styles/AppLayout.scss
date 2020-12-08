@@ -18,29 +18,31 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 76.7%;
+      height: 80%;
       display: block;
       background: url(./../../../assets/images/stars.png) repeat-x top;
     }
 
     .stars-large {
+      position: absolute;
       height: 3.5px;
       width: 3.5px;
       border-radius: 50%;
       background: transparent;
       box-shadow: 1955px 49px #fff, 978px 23px #fff, 1713px 30px #fff, 1454px 49px #fff, 1117px 39px #fff, 1753px 8px #fff, 1997px 12px #fff, 1876px 55px #fff, 1227px 46px #fff, 1964px 44px #fff;
-      -webkit-animation: blink-large 7s infinite;
-      animation: blink-large 7s infinite;
+      -webkit-animation: blink-large 4s infinite;
+      animation: blink-large 4s infinite;
     }
 
     .stars-medium {
-      height: 3.5px;
-      width: 3.5px;
+      position: absolute;
+      height: 2.5px;
+      width: 2.5px;
       border-radius: 50%;
       background: transparent;
       box-shadow: 1955px 49px #fff, 978px 23px #fff, 1713px 30px #fff, 1454px 49px #fff, 1117px 39px #fff, 1753px 8px #fff, 1997px 12px #fff, 1876px 55px #fff, 1227px 46px #fff, 1964px 44px #fff;
-      -webkit-animation: blink-large 7s infinite;
-      animation: blink-large 7s infinite;
+      -webkit-animation: blink-medium 3s infinite;
+      animation: blink-medium 3s infinite;
     }
   }
 
