@@ -3,7 +3,6 @@ import { Redirect, Route, Router, Switch } from 'react-router';
 
 import { History } from 'base';
 import { Planet, Layout } from 'components';
-import './index.scss';
 
 export default class Routes extends React.Component {
 

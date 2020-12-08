@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './styles/AppLayout.scss';
 
 export default class AppLayout extends React.PureComponent {
 
