@@ -9,7 +9,7 @@ import {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { loadMorePlanets } from 'app-redux/actions/planets';
+import { loadMorePlanets } from 'app-actions/planets';
 import PlanetCard from './PlanetCard';
 
 
