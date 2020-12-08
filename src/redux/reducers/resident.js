@@ -1,4 +1,4 @@
-import { actionTypes } from '../actions/types';
+import { actionTypes } from 'app-actions/types';
 
 const initialState = {
   loading: false,
@@ -40,6 +40,13 @@ export default function resident(state = initialState, action) {
         },
         loading: false,
       };
+    case actionTypes.CLEAR_RESIDENT_DATA:
+      return {
+        ...state,
+        showResident: initialState.showResident,
+      };
+    case actionTypes.CLEAR_RESIDENTS_DATA:
+      return initialState;
     default:
       return state;
   }

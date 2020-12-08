@@ -1,6 +1,7 @@
+import { find } from 'lodash';
+
 import { Api } from 'base';
 import { actionTypes } from './types';
-import { find } from 'lodash';
 
 const getResidentStarted = () => ({
   type: actionTypes.GET_RESIDENT_START
@@ -8,12 +9,12 @@ const getResidentStarted = () => ({
 
 const getResidentSuccess = residents => ({
   type: actionTypes.GET_RESIDENT_SUCCESS,
-  payload: residents,
+  payload: residents
 });
 
 const getResidentError = error => ({
   type: actionTypes.GET_RESIDENT_ERROR,
-  payload: error,
+  payload: error
 });
 
 const getResidentsStarted = () => ({
@@ -22,12 +23,12 @@ const getResidentsStarted = () => ({
 
 const getResidentsSuccess = residents => ({
   type: actionTypes.GET_RESIDENTS_SUCCESS,
-  payload: residents,
+  payload: residents
 });
 
 const getResidentsError = error => ({
   type: actionTypes.GET_RESIDENTS_ERROR,
-  payload: error,
+  payload: error
 });
 
 const getResidentId = url => {

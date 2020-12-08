@@ -1,9 +1,12 @@
-import { actionTypes } from '../../actions/types';
+import { actionTypes } from 'app-actions/types';
 
 const initialState = {
   loading: false,
   data: {},
-  error: null
+  error: {
+    status: null,
+    data: {},
+  },
 };
 
 export default function planetShow(state = initialState, action) {
@@ -17,6 +20,15 @@ export default function planetShow(state = initialState, action) {
       return {
         ...state,
         data: action.payload,
+        loading: false,
+      };
+    case actionTypes.GET_PLANET_ERROR:
+      return {
+        ...state,
+        error: {
+          status: action.payload.status,
+          data: action.payload.data,
+        },
         loading: false,
       };
     case actionTypes.CLEAR_PLANET_DATA:

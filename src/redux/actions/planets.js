@@ -1,7 +1,8 @@
-import { Api } from 'base';
-import { actionTypes } from './types';
 import { find } from 'lodash';
+
+import { Api } from 'base';
 import { getResidents } from './residents';
+import { actionTypes } from './types';
 
 const getPlanetStarted = () => ({
   type: actionTypes.GET_PLANET_START
@@ -9,7 +10,12 @@ const getPlanetStarted = () => ({
 
 const getPlanetSuccess = recipes => ({
   type: actionTypes.GET_PLANET_SUCCESS,
-  payload: recipes,
+  payload: recipes
+});
+
+const getPlanetError = error => ({
+  type: actionTypes.GET_PLANET_ERROR,
+  payload: error
 });
 
 export const clearPlanetData = () => ({
@@ -22,7 +28,12 @@ const getPlanetsStarted = () => ({
 
 const getPlanetsSuccess = recipes => ({
   type: actionTypes.GET_PLANETS_SUCCESS,
-  payload: recipes,
+  payload: recipes
+});
+
+const getPlanetsError = error => ({
+  type: actionTypes.GET_PLANETS_ERROR,
+  payload: error
 });
 
 const getNextPlanetsStarted = () => ({
@@ -31,7 +42,12 @@ const getNextPlanetsStarted = () => ({
 
 const getNextPlanetsSuccess = recipes => ({
   type: actionTypes.GET_NEXT_PLANETS_SUCCESS,
-  payload: recipes,
+  payload: recipes
+});
+
+const getNextPlanetsError = error => ({
+  type: actionTypes.GET_NEXT_PLANETS_ERROR,
+  payload: error
 });
 
 export const getPlanet = id => (dispatch, getState) => {
@@ -39,9 +55,12 @@ export const getPlanet = id => (dispatch, getState) => {
 
   const { planet } = getState();
   const { results } = planet.list.data;
-  
+
   if (results.length) {
-    const match = find(results, item => item.url.indexOf(`planets/${id}/`) > -1);
+    const match = find(
+      results,
+      item => item.url.indexOf(`planets/${id}/`) > -1
+    );
 
     if (match) {
       dispatch(getPlanetSuccess(match));
@@ -58,8 +77,7 @@ export const getPlanet = id => (dispatch, getState) => {
       dispatch(getResidents(res.data.residents));
     })
     .catch(err => {
-      // dispatch(getPlanetStarted(err.message));
-      console.log(err);
+      dispatch(getPlanetError(err.response));
     });
 };
 
@@ -72,8 +90,7 @@ export const getPlanets = (page = 1) => dispatch => {
       dispatch(getPlanetsSuccess(res.data));
     })
     .catch(err => {
-      console.log(err);
-      // dispatch(getPlanetsStarted(err.message));
+      dispatch(getPlanetsError(err.response));
     });
 };
 
@@ -87,7 +104,6 @@ export const loadMorePlanets = (page = 1) => dispatch => {
       dispatch(getNextPlanetsSuccess(res.data));
     })
     .catch(err => {
-      console.log(err);
-      // dispatch(getPlanetsStarted(err.message));
+      dispatch(getNextPlanetsError(err.response));
     });
 };

@@ -1,4 +1,4 @@
-import { actionTypes } from '../../actions/types';
+import { actionTypes } from 'app-actions/types';
 
 const initialState = {
   loading: false,
@@ -7,7 +7,10 @@ const initialState = {
     count: 0,
     results: [],
   },
-  error: null
+  error: {
+    status: null,
+    data: {},
+  },
 };
 
 export default function planetList(state = initialState, action) {
@@ -40,6 +43,16 @@ export default function planetList(state = initialState, action) {
         },
         loading: false,
         loadingMore: false,
+      };
+    case actionTypes.GET_PLANETS_ERROR:
+    case actionTypes.GET_NEXT_PLANETS_ERROR:
+      return {
+        ...state,
+        error: {
+          status: action.payload.status,
+          data: action.payload.data,
+        },
+        loading: false,
       };
     default:
       return state;
